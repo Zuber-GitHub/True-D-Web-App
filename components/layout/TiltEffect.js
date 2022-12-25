@@ -53,13 +53,13 @@ const Container = styled.div`
   }
 `;
 
-const TiltEffect = (
-  { hotelsResorts },
-  { educationalInstitutes },
-  { temples },
-  { hospitals },
-  { others }
-) => {
+const TiltEffect = ({
+  hotelsResorts,
+  educationalInstitutes,
+  temples,
+  hospitals,
+  others,
+}) => {
   return (
     <Container className="container">
       <div className="box">
