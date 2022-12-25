@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Contact = () => {
   return (
-    <section class="mb-4 p-5 mt-5 bg-dark text-white">
+    <section class="mb-4 p-5 mt-5 bg-black text-white">
       <h2 class="h1-responsive font-weight-bold text-center my-4">
         Contact us
       </h2>
