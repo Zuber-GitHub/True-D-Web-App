@@ -7,12 +7,12 @@ const Contact = () => {
       <h2 class="h1-responsive font-weight-bold text-center my-4">
         Contact us
       </h2>
-      <p
+      <h1
         style={{ textSize: "30px" }}
         class="text-center w-responsive mx-auto mb-5"
       >
         Are you ready to digitaize your space? Get in touch with us!
-      </p>
+      </h1>
 
       <div class="row d-flex justify-content-center">
         <div class="col-md-9 mb-md-0 mb-5">
@@ -32,6 +32,7 @@ const Contact = () => {
                     type="text"
                     id="name"
                     name="name"
+                    placeholder="Name"
                     class="form-control"
                   />
                 </div>
@@ -46,6 +47,8 @@ const Contact = () => {
                     id="phone"
                     name="phone"
                     class="form-control"
+                    placeholder="+91 12345 67890"
+                    required
                   />
                 </div>
               </div>
@@ -61,6 +64,8 @@ const Contact = () => {
                     id="email"
                     name="email"
                     class="form-control"
+                    placeholder="yourmail@gmail.com"
+                    required
                   />
                 </div>
               </div>
@@ -75,6 +80,7 @@ const Contact = () => {
                     type="text"
                     id="subject"
                     name="subject"
+                    placeholder="Subject"
                     class="form-control"
                   />
                 </div>
@@ -89,6 +95,7 @@ const Contact = () => {
                     id="message"
                     name="message"
                     rows="2"
+                    placeholder="Message..."
                     class="form-control md-textarea"
                   ></textarea>
                 </div>
@@ -97,7 +104,9 @@ const Contact = () => {
           </form>
 
           <div class="text-center text-md-left my-2">
-            <a class="btn btn-primary">Send</a>
+            <a onClick={submitContact} class="btn btn-primary">
+              Send
+            </a>
           </div>
           <div class="status"></div>
         </div>
