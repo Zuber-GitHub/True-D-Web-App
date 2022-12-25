@@ -1,10 +1,108 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Contact = () => {
   return (
-    <div>
-      <h1>Contact Page</h1>
-    </div>
+    <section class="mb-4 p-5 mt-5 bg-dark text-white">
+      <h2 class="h1-responsive font-weight-bold text-center my-4">
+        Contact us
+      </h2>
+      <p
+        style={{ textSize: "30px" }}
+        class="text-center w-responsive mx-auto mb-5"
+      >
+        Are you ready to digitaize your space? Get in touch with us!
+      </p>
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-9 mb-md-0 mb-5">
+          <form
+            id="contact-form"
+            name="contact-form"
+            action="mail.php"
+            method="POST"
+          >
+            <div class="row my-3">
+              <div class="col-md-6">
+                <div class="md-form mb-0">
+                  <label for="name" class="">
+                    Your name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="md-form mb-0">
+                  <label for="phone" class="">
+                    Your Phone Number
+                  </label>
+                  <input
+                    type="text"
+                    id="phone"
+                    name="phone"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="row my-3">
+              <div class="col-md-12">
+                <div class="md-form mb-0">
+                  <label for="email" class="email">
+                    Your Email-Id
+                  </label>
+                  <input
+                    type="text"
+                    id="email"
+                    name="email"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row my-3">
+              <div class="col-md-12">
+                <div class="md-form mb-0">
+                  <label for="subject" class="">
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row my-3">
+              <div class="col-md-12">
+                <div class="md-form">
+                  <label for="message">Your message</label>
+                  <textarea
+                    type="text"
+                    id="message"
+                    name="message"
+                    rows="2"
+                    class="form-control md-textarea"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <div class="text-center text-md-left my-2">
+            <a class="btn btn-primary">Send</a>
+          </div>
+          <div class="status"></div>
+        </div>
+      </div>
+    </section>
   );
 };
 

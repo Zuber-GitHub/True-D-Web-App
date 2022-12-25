@@ -1,73 +1,74 @@
-import { Suspense, useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, useGLTF, Stars } from "@react-three/drei";
-import styled from "styled-components";
-import { useState, useEffect } from "react";
-import { Breakpoints } from "../../styles/Breakpoints";
-import TextAnimation from "./TextAnimation";
+// import { Suspense, useRef } from "react";
+// import { Canvas, useFrame } from "@react-three/fiber";
+// import { OrbitControls, useGLTF, Stars } from "@react-three/drei";
+// import styled from "styled-components";
+// import { useState, useEffect } from "react";
+// import { Breakpoints } from "../../styles/Breakpoints";
+// import TextAnimation from "./TextAnimation";
 
-const Wrapper = styled.div`
-  display: flex;
-  margin-top: 80px;
-  justify-content: space-between;
-  align-items: center;
-  .container {
-  }
-  .model {
-    background-color: #fff;
-    min-height: 300px;
-    min-width: 260px;
-    height: 300px;
-  }
+// const Wrapper = styled.div`
+//   display: flex;
+//   margin-top: 80px;
+//   justify-content: space-between;
+//   align-items: center;
+//   .container {
+//   }
+//   .model {
+//     background-color: #fff;
+//     min-height: 300px;
+//     min-width: 260px;
+//     height: 300px;
+//   }
 
-  @media (max-width: ${Breakpoints.mobile_small}) {
-    flex-direction: column;
-    justify-content: center;
-    align-center: center;
-    .container {
-      display: flex;
-      flex-direction: column;
-      padding: 0px 20px;
-      justify-content: center;
-    }
-    .model {
-    }
-    .text-animation {
-      margin-top: 20px;
-      height: 100px;
-    }
+//   @media (max-width: ${Breakpoints.mobile_small}) {
+//     flex-direction: column;
+//     justify-content: center;
+//     align-center: center;
+//     .container {
+//       display: flex;
+//       flex-direction: column;
+//       padding: 0px 20px;
+//       justify-content: center;
+//     }
+//     .model {
+//     }
+//     .text-animation {
+//       margin-top: 20px;
+//       height: 100px;
+//     }
 
-    .intro-video {
-      width: 92vw;
-      height: calc(92vw / 1.8);
-    }
-  }
-`;
+//     .intro-video {
+//       width: 92vw;
+//       height: calc(92vw / 1.8);
+//     }
+//   }
+// `;
 
-function Model(props) {
-  const { nodes, materials } = useGLTF("assests/scene.gltf");
-  const group = useRef();
+// function Model(props) {
+//   const { nodes, materials } = useGLTF("assests/scene.gltf");
+//   const group = useRef();
 
-  return (
-    <group ref={group} {...props} dispose={null} scale={1.3}>
-      <group position={[119.99, 60, -120.61]} rotation={[-Math.PI / 2, 0, 0]}>
-        <mesh
-          geometry={nodes["Box045_07_-_Default_0"].geometry}
-          material={materials["07_-_Default"]}
-        />
-        <mesh
-          geometry={nodes["Box045_01_-_Default_0"].geometry}
-          material={materials["01_-_Default"]}
-        />
-      </group>
-    </group>
-  );
-}
+//   return (
+//     <group ref={group} {...props} dispose={null} scale={1.3}>
+//       <group position={[119.99, 60, -120.61]} rotation={[-Math.PI / 2, 0, 0]}>
+//         <mesh
+//           geometry={nodes["Box045_07_-_Default_0"].geometry}
+//           material={materials["07_-_Default"]}
+//         />
+//         <mesh
+//           geometry={nodes["Box045_01_-_Default_0"].geometry}
+//           material={materials["01_-_Default"]}
+//         />
+//       </group>
+//     </group>
+//   );
+// }
 
 function ThreeDModel() {
   return (
     <>
-      <Wrapper>
+      <h1>Hi</h1>
+      {/* <Wrapper>
         <div className="container">
           <div className="model">
             <Canvas camera={{ fov: 70, position: [2, 1, 600] }}>
@@ -99,7 +100,7 @@ function ThreeDModel() {
         <div className="text-animation">
           <TextAnimation />
         </div>
-      </Wrapper>
+      </Wrapper> */}
     </>
   );
 }
