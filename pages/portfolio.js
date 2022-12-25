@@ -1,51 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 import TiltEffect from "../components/layout/TiltEffect";
+import { Breakpoints } from "../styles/Breakpoints";
+
+import {
+  hotelsResorts,
+  educationalInstitutes,
+  temples,
+  hospitals,
+  others,
+} from "../components/helper/projects";
 
 const Wrapper = styled.div`
   padding: 100px 30px;
+  @media (max-width: ${Breakpoints.mobile_micro}) {
+    padding: 100px 0px;
+  }
 `;
 
 const Portfolio = () => {
-  const hotelsResorts = [
-    {
-      name: "Royal Ritz Resort",
-      image: "/assests/royal-ritz.jpeg",
-      content: "",
-      url: "",
-    },
-    {
-      name: "Omatra The Bliss Hotel",
-      image: "/assests/bliss.webp",
-      content: "",
-      url: "",
-    },
-  ];
-  const educationalInstitutes = [
-    {
-      name: "KLE Technological University",
-      image: "",
-      content: "",
-      url: "",
-    },
-    {
-      name: "Shri Dharmasthala Manjunatheshwara College of Engineering and Technology",
-      image: "",
-      content: "",
-      url: "",
-    },
-  ];
-  const temples = [
-    {
-      name: "Shri Shiradi Sai Baba Teample Kelageri Road Dharwad.",
-      image: "",
-      content: "",
-      url: "",
-    },
-  ];
-  const hospitals = [];
-  const others = [];
-
   return (
     <Wrapper>
       <TiltEffect
