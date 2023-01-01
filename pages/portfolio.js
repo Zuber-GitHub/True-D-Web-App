@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import TiltEffect from "../components/layout/TiltEffect";
 import { Breakpoints } from "../styles/Breakpoints";
+import Footer from "../components/layout/Footer";
 
 import {
   hotelsResorts,
@@ -20,15 +21,18 @@ const Wrapper = styled.div`
 
 const Portfolio = () => {
   return (
-    <Wrapper>
-      <TiltEffect
-        hotelsResorts={hotelsResorts}
-        educationalInstitutes={educationalInstitutes}
-        temples={temples}
-        hospitals={hospitals}
-        others={others}
-      />
-    </Wrapper>
+    <>
+      <Wrapper>
+        <TiltEffect
+          hotelsResorts={hotelsResorts}
+          educationalInstitutes={educationalInstitutes}
+          temples={temples}
+          hospitals={hospitals}
+          others={others}
+        />
+      </Wrapper>
+      <Footer />
+    </>
   );
 };
 

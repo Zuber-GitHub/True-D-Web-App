@@ -45,7 +45,7 @@ const Wrapper = styled.div`
 `;
 
 function Model(props) {
-  const { nodes, materials } = useGLTF("assests/scene.gltf");
+  const { nodes, materials } = useGLTF("assets/scene.gltf");
   const group = useRef();
 
   return (

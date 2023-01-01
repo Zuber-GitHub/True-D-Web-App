@@ -9,8 +9,8 @@ const Wrapper = styled.div`
   width: 100%;
   top: 0;
   left: 0;
-  margin-bottom:20px;
-  z-index:1;
+  margin-bottom: 20px;
+  z-index: 10;
 
   display: flex;
   align-items: center;
@@ -29,6 +29,7 @@ const Wrapper = styled.div`
       display: none;
       width: ${(props) => (props.toggle ? "30px" : "40px")};
       height: ${(props) => (props.toggle ? "30px" : "40px")};
+      transition: 0.5s;
     }
     .close {
       display: none;
@@ -99,9 +100,9 @@ const Header = () => {
   return (
     <Wrapper toggle={toggle}>
       <div className="image-container">
-        <img className="logo" src="/assests/true-d-web.avif" alt="True-D" />
-        <img className="ham" src="/assests/ham.svg" onClick={toggleMenu} />
-        <img className="close" src="/assests/close.png" onClick={toggleMenu} />
+        <img className="logo" src="/assets/true-d-web.avif" alt="True-D" />
+        <img className="ham" src="/assets/ham.svg" onClick={toggleMenu} />
+        <img className="close" src="/assets/close.png" onClick={toggleMenu} />
       </div>
       <div className="link-container" onClick={toggleMenu}>
         <Link href="/">HOME</Link>
