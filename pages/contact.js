@@ -1,7 +1,40 @@
-import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const form = useRef();
+  const [isPhone, setIsPhone] = useState("");
+  const [isEmail, setIsEmail] = useState("");
+  const [isSubject, setIsSubject] = useState("");
+  const [isMessage, setIsMessage] = useState("");
+  const [isName, setIsName] = useState("");
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_46x04d3",
+        "template_omqvbej",
+        form.current,
+        "EUa3vyznunpy-VkAp"
+      )
+      .then(
+        (result) => {
+          setIsEmail("");
+          setIsPhone("");
+          setIsMessage("");
+          setIsSubject("");
+          setIsName("");
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
     <section class="mb-4 p-5 mt-5 bg-black text-white">
       <h2 class="h1-responsive font-weight-bold text-center my-4">
@@ -17,23 +50,28 @@ const Contact = () => {
       <div class="row d-flex justify-content-center">
         <div class="col-md-9 mb-md-0 mb-5">
           <form
+            ref={form}
+            onSubmit={sendEmail}
             id="contact-form"
             name="contact-form"
-            action="mail.php"
-            method="POST"
           >
             <div class="row my-3">
               <div class="col-md-6">
                 <div class="md-form mb-0">
                   <label for="name" class="">
-                    Your name
+                    Your Name
                   </label>
                   <input
+                    value={isName}
+                    onChange={(e) => {
+                      setIsName(e.target.value);
+                    }}
                     type="text"
                     id="name"
                     name="name"
                     placeholder="Name"
                     class="form-control"
+                    required
                   />
                 </div>
               </div>
@@ -43,6 +81,10 @@ const Contact = () => {
                     Your Phone Number
                   </label>
                   <input
+                    value={isPhone}
+                    onChange={(e) => {
+                      setIsPhone(e.target.value);
+                    }}
                     type="text"
                     id="phone"
                     name="phone"
@@ -60,6 +102,10 @@ const Contact = () => {
                     Your Email-Id
                   </label>
                   <input
+                    value={isEmail}
+                    onChange={(e) => {
+                      setIsEmail(e.target.value);
+                    }}
                     type="text"
                     id="email"
                     name="email"
@@ -77,6 +123,10 @@ const Contact = () => {
                     Subject
                   </label>
                   <input
+                    value={isSubject}
+                    onChange={(e) => {
+                      setIsSubject(e.target.value);
+                    }}
                     type="text"
                     id="subject"
                     name="subject"
@@ -91,28 +141,32 @@ const Contact = () => {
                 <div class="md-form">
                   <label for="message">Your message</label>
                   <textarea
+                    value={isMessage}
+                    onChange={(e) => {
+                      setIsMessage(e.target.value);
+                    }}
                     type="text"
                     id="message"
                     name="message"
                     rows="2"
                     placeholder="Message..."
                     class="form-control md-textarea"
+                    required
                   ></textarea>
                 </div>
               </div>
             </div>
+            <input
+              type="submit"
+              value="Send"
+              class="text-center text-md-left my-2 btn bg-white"
+            />
           </form>
 
-          <div class="text-center text-md-left my-2">
-            <a onClick={submitContact} class="btn btn-primary">
-              Send
-            </a>
-          </div>
           <div class="status"></div>
         </div>
       </div>
     </section>
   );
 };
-
 export default Contact;
