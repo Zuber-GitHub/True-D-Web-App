@@ -44,9 +44,9 @@
 //   }
 // `;
 
-// function Model(props) {
-//   const { nodes, materials } = useGLTF("assests/scene.gltf");
-//   const group = useRef();
+function Model(props) {
+  const { nodes, materials } = useGLTF("assets/scene.gltf");
+  const group = useRef();
 
 //   return (
 //     <group ref={group} {...props} dispose={null} scale={1.3}>
