@@ -9,10 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
     "@react-three/drei": "^9.48.1",
     "@react-three/fiber": "^8.9.1",
-    "next": "13.1.0",
+    "bootstrap": "^5.2.3",
+    "next": "^13.1.0",
     "react": "18.2.0",
+    "react-bootstrap": "^2.7.0",
     "react-dom": "18.2.0",
     "react-parallax-tilt": "^1.7.78",
     "react-whatsapp": "^0.3.0",
