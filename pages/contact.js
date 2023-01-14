@@ -44,6 +44,7 @@ const Contact = () => {
         style={{ textSize: "30px" }}
         class="text-center w-responsive mx-auto mb-5"
       >
+        {" "}
         Are you ready to digitaize your space? Get in touch with us!
       </h1>
 
