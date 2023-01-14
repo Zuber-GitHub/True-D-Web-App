@@ -1,4 +1,6 @@
-import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const form = useRef();
@@ -170,5 +172,4 @@ const Contact = () => {
     </section>
   );
 };
-
 export default Contact;

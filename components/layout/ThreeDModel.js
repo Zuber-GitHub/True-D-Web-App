@@ -8,10 +8,21 @@ import TextAnimation from "./TextAnimation";
 
 const Wrapper = styled.div`
   display: flex;
-  margin-top: 80px;
-  justify-content: space-between;
+  margin-top: 100px;
+  padding: 0 20px;
+  width:100%;
+  //justify-content: space-between;
+
   align-items: center;
   .container {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+  .intro-video {
+    margin-top:10px;
+    width: 690px;
+    height: 388px;
   }
   .model {
     background-color: #fff;
@@ -23,7 +34,8 @@ const Wrapper = styled.div`
   @media (max-width: ${Breakpoints.mobile_small}) {
     flex-direction: column;
     justify-content: center;
-    align-center: center;
+    align-items: center;
+    padding: 0px;
     .container {
       display: flex;
       flex-direction: column;
@@ -35,6 +47,8 @@ const Wrapper = styled.div`
     .text-animation {
       margin-top: 20px;
       height: 100px;
+      width: 100%;
+      text-align: left;
     }
 
     .intro-video {
@@ -45,7 +59,7 @@ const Wrapper = styled.div`
 `;
 
 function Model(props) {
-  const { nodes, materials } = useGLTF("assests/scene.gltf");
+  const { nodes, materials } = useGLTF("assets/scene.gltf");
   const group = useRef();
 
   return (
@@ -90,7 +104,7 @@ function ThreeDModel() {
           </div>
           <iframe
             className="intro-video"
-            src="https://www.youtube.com/embed/lC9IqTEs-TA?autoplay=1&mute=1"
+            src="https://www.youtube.com/embed/lC9IqTEs-TA?autoplay=1&mute=1&playlist=lC9IqTEs-TA&loop=1"
             title="Introducing TRUE DIMENSIONS | Virtual Tour Services"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;playsinline: 1"
