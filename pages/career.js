@@ -1,10 +1,39 @@
 import React from "react";
+import styled from "styled-components";
+import Footer from "../components/layout/Footer";
+
+const Container = styled.div`
+.container{
+  margin-top: 6rem
+}
+.career{
+  width: 100vw;
+  background-color: rgb(241 245 249);
+  font-size: 1.875rem; /* 30px */
+  line-height: 2.25rem; /* 36px */
+  padding-left: 2.5rem; /* 40px */
+  font-weight: 600;
+  padding-top: 1.25rem; /* 20px */
+  padding-bottom: 1.25rem; /* 20px */
+}
+`
 
 const Career = () => {
   return (
-    <div>
-      <h1>Career page</h1>
-    </div>
+    <Container>
+      <div className="container ">
+        <div className="career">
+          Career page
+        </div>
+        <div className="px-10 mt-5">
+          Currently no position available !
+        </div>
+
+      </div>
+      <div className="mt-72 ">
+        <Footer className='mt-auto' />
+      </div>
+    </Container>
   );
 };
 
