@@ -4,6 +4,7 @@ import Header from "../components/layout/Header";
 import Solution from "../components/layout/Solution";
 import ThreeDModel from "../components/layout/ThreeDModel";
 import styled from "styled-components";
+import Partnerlider from "../components/layout/Partnerlider";
 
 const Wrapper = styled.div`
   position: relative;
@@ -54,6 +55,7 @@ const Home = () => {
           });
         }}
       />
+      <Partnerlider />
     </Wrapper>
   );
 };

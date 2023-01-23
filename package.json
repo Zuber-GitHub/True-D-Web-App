@@ -19,7 +19,9 @@
     "react-bootstrap": "^2.7.0",
     "react-dom": "18.2.0",
     "react-parallax-tilt": "^1.7.78",
+    "react-slick": "^0.29.0",
     "react-whatsapp": "^0.3.0",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.6",
     "typewriter-effect": "^2.19.0"
   },
