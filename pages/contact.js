@@ -15,8 +15,8 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_46x04d3",
-        "template_omqvbej",
+        "service_9wjebfq",
+        "template_cswuew9",
         form.current,
         "EUa3vyznunpy-VkAp"
       )
@@ -44,6 +44,7 @@ const Contact = () => {
         style={{ textSize: "30px" }}
         class="text-center w-responsive mx-auto mb-5"
       >
+        {" "}
         Are you ready to digitaize your space? Get in touch with us!
       </h1>
 
@@ -89,7 +90,7 @@ const Contact = () => {
                     id="phone"
                     name="phone"
                     class="form-control"
-                    placeholder="+91 12345 67890"
+                    placeholder="+91 98765 43210"
                     required
                   />
                 </div>
@@ -156,11 +157,14 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            <input
-              type="submit"
-              value="Send"
-              class="text-center text-md-left my-2 btn bg-white"
-            />
+            <div className="text-center">
+              <input
+                className="w-25"
+                type="submit"
+                value="Send"
+                class="text-center text-md-left my-2 btn bg-white"
+              />
+            </div>
           </form>
 
           <div class="status"></div>

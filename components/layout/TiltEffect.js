@@ -29,7 +29,7 @@ const Container = styled.div`
   position: relative;
   display: flex;
   transform-style: preserve-3d;
-  z-index:0;
+  z-index: 0;
 
   .image {
     border-radius: 10px;
@@ -49,7 +49,8 @@ const Container = styled.div`
   a {
     font-size: 20px;
     font-weight: 600;
-    text-decoration: underline;
+    text-decoration: underline !important;
+    color: #000 !important;
   }
 
   .box {
@@ -59,7 +60,7 @@ const Container = styled.div`
     margin-top: 20px;
     transform-style: preserve-3d;
     display: flex;
-    z-index:1;
+    z-index: 1;
     justify-content: center;
     @media (max-width: ${Breakpoints.mobile_micro}) {
       width: 355px;
@@ -89,7 +90,7 @@ const Container = styled.div`
     z-index: 2;
     @media (max-width: ${Breakpoints.mobile_micro}) {
       height: 145px;
-      overflow-y:scroll;
+      overflow-y: scroll;
     }
   }
 
