@@ -67,25 +67,25 @@ const TextAnimation = () => {
           }}
           onInit={(typewriter) => {
             typewriter
-              .typeString('<span style="font-size: 25px;">WE OFFER - </span>')
+              .typeString('<span style="font-size: 20px;">WE OFFER - </span>')
 
               .typeString(
-                '<span style="font-size: 25px;font-weight:700;color:white;background:black;">IMMERSIVE</span>'
+                '<span style="font-size: 20px;font-weight:700;color:white;background:black;">IMMERSIVE</span>'
               )
               .pauseFor(2500)
               .deleteChars(9)
               .typeString(
-                '<span style="font-size: 25px;font-weight:700;color:white;background:black;">ENGAGING</span>'
+                '<span style="font-size: 20px;font-weight:700;color:white;background:black;">ENGAGING</span>'
               )
               .pauseFor(2500)
               .deleteChars(8)
               .typeString(
-                '<span style="font-size: 25px;font-weight:700;color:white;background:black;">INTERACTIVE</span>'
+                '<span style="font-size: 20px;font-weight:700;color:white;background:black;">INTERACTIVE</span>'
               )
               .pauseFor(2500)
               .deleteChars(11)
               .typeString(
-                '<span style="font-size: 25px;font-weight:700;">VIRTUAL TOURS</span>'
+                '<span style="font-size: 20px;font-weight:700;">VIRTUAL TOURS</span>'
               )
               .pauseFor(2500)
               .start();

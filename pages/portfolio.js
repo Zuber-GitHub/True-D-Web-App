@@ -31,7 +31,6 @@ const Portfolio = () => {
           others={others}
         />
       </Wrapper>
-      <Footer />
     </>
   );
 };
