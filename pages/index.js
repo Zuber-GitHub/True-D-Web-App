@@ -20,6 +20,11 @@ const Wrapper = styled.div`
     opacity: ${(props) => (props.scroll ? "1" : "0")};
     cursor: pointer;
   }
+  @media (max-width: ${Breakpoints.mobile}) {
+    .slick-dots {
+      display: none !important;
+    }
+  }
 `;
 
 const ImageContainer = styled.div`
