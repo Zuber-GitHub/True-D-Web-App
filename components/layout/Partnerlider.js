@@ -28,9 +28,8 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     @media (max-width: ${Breakpoints.mobile}) {
-      .client-logo{
+      .client-logo {
         width: 60%;
-
       }
     }
   }
@@ -61,7 +60,7 @@ const Partnerlider = () => {
   };
   return (
     <Wrapper>
-      <div className="heading">Our Partners</div>
+      <div className="heading">Our Clients</div>
       <Slider {...settings}>
         {clients.map((client) => (
           <div className="Some" key={client.id}>

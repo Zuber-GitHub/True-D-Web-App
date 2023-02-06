@@ -106,7 +106,7 @@ const Header = () => {
       </div>
       <div className="link-container" onClick={toggleMenu}>
         <Link href="/">HOME</Link>
-        <Link href="/portfolio">PORTFOLIO</Link>
+        <Link href="/portfolio">Our Work</Link>
         <Link href="/contact">CONTACT</Link>
         <Link href="/about">ABOUT US</Link>
         <Link href="/career">CAREER</Link>
