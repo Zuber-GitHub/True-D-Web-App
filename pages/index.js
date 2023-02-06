@@ -5,6 +5,8 @@ import Solution from "../components/layout/Solution";
 import ThreeDModel from "../components/layout/ThreeDModel";
 import styled from "styled-components";
 import Partnerlider from "../components/layout/Partnerlider";
+import ClientCounter from "../components/layout/Counter";
+import { Breakpoints } from "../styles/Breakpoints";
 
 const Wrapper = styled.div`
   position: relative;
@@ -17,6 +19,34 @@ const Wrapper = styled.div`
     fill: red;
     opacity: ${(props) => (props.scroll ? "1" : "0")};
     cursor: pointer;
+  }
+`;
+
+const ImageContainer = styled.div`
+  display: flex;
+  gap: 10px;
+  padding: 20px 30px;
+
+  @media (max-width: ${Breakpoints.mobile}) {
+    display: block;
+  }
+
+  .img-1 {
+    width: 50%;
+    height: auto;
+    @media (max-width: ${Breakpoints.mobile}) {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  .img-2 {
+    width: 50%;
+    height: auto;
+    @media (max-width: ${Breakpoints.mobile}) {
+      display: block;
+      width: 100%;
+    }
   }
 `;
 
@@ -55,7 +85,12 @@ const Home = () => {
           });
         }}
       />
+      <ClientCounter />
       <Partnerlider />
+      <ImageContainer>
+        <img className="img-1" src="/assets/cover.png" alt="image" />
+        <img className="img-2" src="/assets/market.png" alt="image" />
+      </ImageContainer>
     </Wrapper>
   );
 };

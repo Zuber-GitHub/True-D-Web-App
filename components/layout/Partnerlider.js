@@ -9,34 +9,44 @@ import { Breakpoints } from "../../styles/Breakpoints";
 const Wrapper = styled.div`
   .slick-list {
     text-align: center;
+    padding-left: 50px;
+  }
+
+  .heading {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .client-logo {
+    width: 50%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
   }
 
   .Some {
-    height: 100px;
-    width: 100px;
-    border: 2px solid red;
-    width: 75% !important;
     display: flex;
-    align-items: center;
-      ${
-        "" /* @media (max-width: ${Breakpoints.mobile}) {
-      height: 50px;
-      width: 50px;
-    } */
-      };
+    justify-content: center;
+    @media (max-width: ${Breakpoints.mobile}) {
+      .client-logo{
+        width: 60%;
+
+      }
+    }
   }
 `;
 
 const Partnerlider = () => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
     speed: 2000,
     autoplaySpeed: 1500,
     cssEase: "linear",
+    arrows: false,
     responsive: [
       {
         breakpoint: Breakpoints.mobile,
@@ -51,14 +61,11 @@ const Partnerlider = () => {
   };
   return (
     <Wrapper>
+      <div className="heading">Our Partners</div>
       <Slider {...settings}>
         {clients.map((client) => (
           <div className="Some" key={client.id}>
-            <img
-              src={client.image}
-              alt={client.alt}
-              style={{ maxHeight: "100%", maxWidth: "75%" }}
-            />
+            <img src={client.image} alt={client.alt} className="client-logo" />
           </div>
         ))}
       </Slider>

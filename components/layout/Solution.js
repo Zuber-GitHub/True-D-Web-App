@@ -45,7 +45,7 @@ const Wrapper = styled.div`
   }
   .sub-2 {
     display: flex;
-    gap:10px;
+    gap: 10px;
     justify-content: space-between;
     flex-wrap: wrap;
     @media (max-width: ${Breakpoints.mobile}) {
@@ -79,34 +79,6 @@ const Wrapper = styled.div`
   .cover-img {
     width: 100%;
     height: auto;
-  }
-`;
-
-const ImageContainer = styled.div`
-  display: flex;
-  gap: 10px;
-  padding: 20px 30px;
-
-  @media (max-width: ${Breakpoints.mobile}) {
-    display: block;
-  }
-
-  .img-1 {
-    width: 50%;
-    height: auto;
-    @media (max-width: ${Breakpoints.mobile}) {
-      display: block;
-      width: 100%;
-      margin-bottom: 10px;
-    }
-  }
-  .img-2 {
-    width: 50%;
-    height: auto;
-    @media (max-width: ${Breakpoints.mobile}) {
-      display: block;
-      width: 100%;
-    }
   }
 `;
 
@@ -177,10 +149,6 @@ const Solution = () => {
           </div>
         </div>
       </Wrapper>
-      <ImageContainer>
-        <img className="img-1" src="/assets/cover.png" alt="image" />
-        <img className="img-2" src="/assets/market.png" alt="image" />
-      </ImageContainer>
     </div>
   );
 };

@@ -154,8 +154,8 @@ const footerImages = [
 ];
 
 const Footer = () => {
-  const [openWhatsapp, setOpenWhatsapp] = useState(false);
   const router = useRouter();
+  const pagesToExclude = ["career", "test", "contact"];
   const socialMediaHandler = (name, url) => {
     if (name !== "whatsapp") {
       window.open(url);
@@ -168,6 +168,9 @@ const Footer = () => {
       <img src="/assets/whatsapp.png" alt="logo" height="24px" width="24px" />
     );
   };
+
+  if (pagesToExclude.includes(router.pathname.split("/")[1])) return null;
+  console.log(router.pathname.split("/")[1]);
 
   return (
     <Wrapper>
@@ -211,7 +214,7 @@ const Footer = () => {
             ))}
             <ReactWhatsapp
               className="whatsapp"
-              number="7975602048"
+              number="9482848107"
               message="Hi True Dimensions"
             />
           </div>
@@ -219,7 +222,7 @@ const Footer = () => {
         <div className="contact heading">
           <div className="sub-heading">Say Hello</div>
           <a href="hello@truedimensions.in">hello@truedimensions.in</a>
-          <div>+91 8909897887</div>
+          <div>+91 9482848107</div>
         </div>
       </div>
       <div className="footer-border"></div>

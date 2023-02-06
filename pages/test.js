@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import { Breakpoints } from "../styles/Breakpoints";
 import emailjs from "@emailjs/browser";
@@ -30,7 +30,7 @@ const Wrapper = styled.div`
     margin-bottom: 16px;
   }
   .message {
-    height: 5rem;
+    height: 10rem;
   }
   .submit {
     background-color: #333331;
@@ -40,21 +40,8 @@ const Wrapper = styled.div`
     border-radius: 4px;
     cursor: pointer;
   }
-  .submit:hover:enabled {
+  .submit:hover {
     background-color: black;
-  }
-  input:focus {
-    outline: none !important;
-    border-color: #000;
-  }
-  textarea:focus {
-    outline: none !important;
-    border-color: #000;
-  }
-  button:disabled {
-    background-color: #999;
-    cursor: not-allowed;
-    pointer-events: all !important;
   }
 `;
 
@@ -65,17 +52,6 @@ function Contact() {
   const [isSubject, setIsSubject] = useState("");
   const [isMessage, setIsMessage] = useState("");
   const [isName, setIsName] = useState("");
-  const [disabled, setDisabled] = useState(true);
-
-  useEffect(() => {
-    if ([isEmail, isPhone, isSubject, isMessage, isName].every((el) => !!el)) {
-      setDisabled(false);
-    } else {
-      if (disabled === false) {
-        setDisabled(true);
-      }
-    }
-  }, [isEmail, isPhone, isSubject, isMessage, isName]);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -101,16 +77,6 @@ function Contact() {
           console.log(error.text);
         }
       );
-  };
-
-  const phoneRegex = /^[6-9]\d{9}$/;
-
-  const handleChange = (event) => {
-    const inputValue = event.target.value;
-
-    if (phoneRegex.test(inputValue)) {
-      setIsPhone(inputValue);
-    }
   };
   return (
     <Wrapper>
@@ -143,7 +109,9 @@ function Contact() {
         <label>Phone Number</label>
         <input
           value={isPhone}
-          onChange={handleChange}
+          onChange={(e) => {
+            setIsPhone(e.target.value);
+          }}
           className="phone"
           type="text"
           id="phone"
@@ -174,9 +142,7 @@ function Contact() {
           placeholder="Write your message....."
         ></textarea>
         <center>
-          <button className="submit" type="submit" disabled={disabled}>
-            Submit
-          </button>
+          <input className="submit" type="submit" value="Submit" />
         </center>
       </form>
     </Wrapper>

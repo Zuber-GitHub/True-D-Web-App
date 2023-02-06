@@ -10,8 +10,9 @@ const Wrapper = styled.div`
   display: flex;
   margin-top: 100px;
   padding: 0 20px;
-  width:100%;
-  //justify-content: space-between;
+  justify-content: center;
+  gap:80px;
+  margin-left: 150px;
 
   align-items: center;
   .container {
@@ -20,7 +21,7 @@ const Wrapper = styled.div`
     gap: 25px;
   }
   .intro-video {
-    margin-top:10px;
+    margin-top: 10px;
     width: 690px;
     height: 388px;
   }
@@ -29,13 +30,22 @@ const Wrapper = styled.div`
     min-height: 300px;
     min-width: 260px;
     height: 300px;
+    flex-shrink: 0;
+  }
+  .text-animation {
+    height: 100px;
+    width: 100%;
+    text-align: left;
+    flex-grow: 1;
   }
 
-  @media (max-width: ${Breakpoints.mobile_small}) {
+  @media (max-width: ${Breakpoints.mobile}) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0px;
+    margin-left: 0;
+    gap:20px;
     .container {
       display: flex;
       flex-direction: column;
@@ -55,6 +65,16 @@ const Wrapper = styled.div`
       width: 92vw;
       height: calc(92vw / 1.8);
     }
+  }
+`;
+
+const Video = styled.div`
+  display: flex;
+  justify-content: center;
+  .intro-video {
+    margin-top: 10px;
+    width: 100vw;
+    height: calc(100vw / 1.8);
   }
 `;
 
@@ -102,18 +122,20 @@ function ThreeDModel() {
               </Suspense>
             </Canvas>
           </div>
-          <iframe
-            className="intro-video"
-            src="https://www.youtube.com/embed/lC9IqTEs-TA?autoplay=1&mute=1&playlist=lC9IqTEs-TA&loop=1"
-            title="Introducing TRUE DIMENSIONS | Virtual Tour Services"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;playsinline: 1"
-          ></iframe>
         </div>
         <div className="text-animation">
           <TextAnimation />
         </div>
       </Wrapper>
+      <Video>
+        <iframe
+          className="intro-video"
+          src="https://www.youtube.com/embed/lC9IqTEs-TA?autoplay=1&mute=1&playlist=lC9IqTEs-TA&loop=1"
+          title="Introducing TRUE DIMENSIONS | Virtual Tour Services"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;playsinline: 1"
+        ></iframe>
+      </Video>
     </>
   );
 }
